@@ -42,6 +42,67 @@
   width: 99.25%;
 }
 
+.InventoryDescriptionHeader {
+  font-size: 14pt;
+  border-bottom: none;
+  border-left: none;
+  border-right: .15em;
+  border-right-style: dotted;
+  border-top: none;
+  text-align: center;
+  width: 30em;
+}
+
+.InventoryHeader {
+  border-bottom: .15em;
+  border-left: 0em;
+  border-right: 0em;
+  border-style: solid;
+  border-top: 0em;
+  display: flex;
+  flex-direction: row;
+}
+
+.InventoryNameHeader {
+  align-content: center;
+  border-bottom: none;
+  border-left: none;
+  border-right: .15em;
+  border-right-style: dotted;
+  border-top: none;
+  font-size: 14pt;
+  text-align: center;
+  width: 15em;
+}
+
+.InventoryNotesHeader {
+  font-size: 14pt;
+  text-align: center;
+  width: 30em;
+}
+
+.InventoryRoomHeader {
+  border-bottom: none;
+  border-left: none;
+  border-right: .15em;
+  border-right-style: dotted;
+  border-top: none;
+  font-size: 14pt;
+  text-align: center;
+  width: 15em;
+}
+
+.InventorySerialHeader {
+  border-bottom: none;
+  border-left: none;
+  border-right: .15em;
+  border-right-style: dotted;
+  border-top: none;
+  font-size: 14pt;
+  text-align: center;
+  width: 15em;
+}
+
 .ItemInventoryContainer {
   border-style: solid;
   margin-top: .2em;
@@ -123,4 +184,80 @@
   font-size: 16pt;
   font-weight: 500;
   margin-left: .9em;
+}
+
+
+
+
+
+
+
+
+.ItemCardContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.ItemCardName {
+  border-bottom: .15em;
+  border-bottom-style: solid;
+  border-left: none;
+  border-right: .15em;
+  border-right-style: dotted;
+  border-top: none;
+  height: 3.75em;
+  overflow: auto;
+  padding-left: .2em;
+  width: 16.65em;
+}
+
+.ItemCardRoom {
+  border-bottom: .15em;
+  border-bottom-style: solid;
+  border-left: none;
+  border-right: .15em;
+  border-right-style: dotted;
+  border-top: none;
+  height: 3.75em;
+  overflow: auto;
+  padding-left: .2em;
+  width: 16.6em;
+}
+
+.ItemCardDescription {
+  border-bottom: .15em;
+  border-bottom-style: solid;
+  border-left: none;
+  border-right: .15em;
+  border-right-style: dotted;
+  border-top: none;
+  height: 3.75em;
+  overflow: auto;
+  padding-left: .2em;
+  width: 33.4em;
+}
+
+.ItemCardSerial {
+  border-bottom: .15em;
+  border-bottom-style: solid;
+  border-left: none;
+  border-right: .15em;
+  border-right-style: dotted;
+  border-top: none;
+  height: 3.75em;
+  overflow: auto;
+  padding-left: .2em;
+  width: 16.55em;
+}
+
+.ItemCardNotes {
+  border-bottom: .15em;
+  border-bottom-style: solid;
+  border-left: none;
+
+  border-top: none;
+  height: 3.75em;
+  overflow: auto;
+  padding-left: .2em;
+  width: 33.4em;
 }
