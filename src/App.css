@@ -1,38 +1,125 @@
-.App {
+.PageHeaderContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.HomeInventoryTitle{
+  border-style: solid;
+  height: 1.5em;
+  margin-top: .2em;
+  width: 15em;
+  padding: .25em;
+  text-align: center;
+  margin-left: -2em;
+}
+
+.AddItemButton {
+  font-size: 18pt;
+  height: 3em;
+  width: 8em;
+  margin-top: .25em;
+  margin-left: .25em;
+  margin-right: 23em;
+  font-weight: 600;
+  background-color:springgreen
+}
+
+/* .subHeaderContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+} */
+
+.ItemInventoryContainer{
+  border-style: solid;
+  margin-top: .2em;
+  padding: .25em;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+
+.BodyContainer{
+  /* border: .1em;
+  border-style: solid; */
+  height: auto;
+  width: 99.25%;
+  margin-left: .25em;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.FiltersContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-left: 1em;
+  margin-right: 1em;
+  margin-bottom: 1em;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.RoomFilter{
+  border-style: solid;
+  margin-top: .2em;
+  margin-left: -.5em;
+  padding: .25em;
+  text-align: center;
+  width: 25em;
+  height: 1.5em;
+  font-size: 18pt;
+}
+
+.ItemNumberFilter{
+  border-style: solid;
+  margin-top: .2em;
+  padding: .25em;
+  text-align: center;
+  width: 25em;
+  height: 1.5em;
+  font-size: 18pt;
+  margin-left: 1em;
+}
+
+.Search {
+  border-style: solid;
+  margin-top: .2em;
+  padding: .25em;
+  text-align: left;
+  width: 25em;
+  height: 1em;
+  font-size: 16pt;
+  margin-left: 1em;
+ 
+}
+
+.RoomContainer {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.SearchContainer{
+  display: flex;
+  flex-direction: column;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.ItemNumberContainer{
+  display: flex;
+  flex-direction: column;
+}
+
+.RoomFilterTitle {
+  margin-left: -.5em;
+  font-size: 16pt;
+  font-weight: 500;
+}
+
+.ItemNumberTitle {
+  margin-left: 1.25em;
+  font-size: 16pt;
+  font-weight: 500;
+}
+
+.SearchTitle {
+  margin-left: 1.1em;
+  font-size: 16pt;
+  font-weight: 500;
 }
