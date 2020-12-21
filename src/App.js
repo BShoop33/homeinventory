@@ -1,6 +1,6 @@
-import logo from './logo.svg';
 import './App.css';
 import { useHistory } from "react-router-dom"
+import { ItemCard } from "./ItemCard"
 
 export function HomePage() {
 
@@ -38,19 +38,37 @@ export function HomePage() {
 
           <div className="SearchContainer">
             <label className="SearchTitle">Search</label>
-            <input type="text" className="Search" placeholder="Search  for an item" />
+            <input type="text" className="Search" placeholder="Search for an item" />
           </div>
         </div>
 
         <div className="InventoryContainer">
+          <div className="InventoryHeader">
+            <div className="InventoryNameHeader">Item Name</div>
+            <div className="InventoryRoomHeader">Room</div>
+            <div className="InventoryDescriptionHeader">Description</div>
+            <div className="InventorySerialHeader">Serial Number</div>
+            <div className="InventoryNotesHeader">Notes</div>
+          </div>
 
 
-
+          <div className="ItemCard">
+            <div className="ItemCardContainer">
+              <div className="ItemCardName">Christmas </div>
+              <div className="ItemCardRoom">Living Roomffffffffffffffff</div>
+              <div className="ItemCardDescription">Some ffffffffffffCool Description Here</div>
+              <div className="ItemCardSerial">37286080890</div>
+              <div className="ItemCardNotes">a;kjs;dlkfja;lsdkjf;asljfd</div>
+            </div>
+          </div>
+          {/* <div className="LendReturnedToolsCards">
+            {
+              tool.map(tool => {
+                return <ToolCard key={tool.id} tool={tool} />
+              })
+            }
+          </div> */}
         </div>
-
-
-
-
       </div>
     </>
   );

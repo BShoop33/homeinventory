@@ -1,7 +1,7 @@
 import React from "react";
 import { Route } from "react-router-dom";
 import { HomePage } from "./App";
-import { AddItem } from "./Home/AddItem";
+import { AddItem } from "./AddItem";
 
 export default function ApplicationViews() {
     return (
