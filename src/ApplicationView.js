@@ -1,15 +1,18 @@
 import React from "react";
 import { Route } from "react-router-dom";
-import { HomePage } from "./Home/Home";
-//import { HomeProvider } from "./Home/HomeDataProvider";
+import { HomePage } from "./App";
+import { AddItem } from "./Home/AddItem";
 
-
-export const ApplicationViews = () => {
+export default function ApplicationViews() {
     return (
         <>
-            <Route exact path="/home">
+            <Route exact path="/">
                 <HomePage />
             </Route>
+
+            <Route exact path="/additem">
+                <AddItem />
+            </Route>
         </>
-    )
+    );
 }

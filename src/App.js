@@ -1,26 +1,29 @@
 import logo from './logo.svg';
 import './App.css';
+import { useHistory } from "react-router-dom"
 
-function App() {
+export function HomePage() {
+
+  const history = useHistory();
+
   return (
     <>
       <header className="PageHeaderContainer">
         <button className="AddItemButton"
-          // onClick={() => {
-          //   history.push(`/lend/borrow`)
-          // }}
+          onClick={() => {
+            history.push(`/additem`)
+          }}
           type="button">Add New Item
         </button>
         <h1 className="HomeInventoryTitle">Home Inventory</h1>
-
       </header>
 
-      <body className="BodyContainer">
+      <div className="BodyContainer">
         <div className="FiltersContainer">
           <div className="RoomContainer">
             <label className="RoomFilterTitle">Room </label>
             <select className="RoomFilter">Room
-              <option>1</option>
+            <option>1</option>
               <option>2</option>
             </select>
           </div>
@@ -28,7 +31,7 @@ function App() {
           <div className="ItemNumberContainer">
             <label className="ItemNumberTitle">Item Number</label>
             <select className="ItemNumberFilter">Item Inventory
-            <option>1</option>
+              <option>1</option>
               <option>2</option>
             </select>
           </div>
@@ -38,9 +41,17 @@ function App() {
             <input type="text" className="Search" placeholder="Search  for an item" />
           </div>
         </div>
-      </body>
+
+        <div className="InventoryContainer">
+
+
+
+        </div>
+
+
+
+
+      </div>
     </>
   );
 }
-
-export default App;

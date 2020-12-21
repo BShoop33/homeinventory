@@ -1,0 +1,40 @@
+.CancelAddItem {
+    background-color:lightcoral;
+    border-radius: 1.5em;
+    font-size: 18pt;
+    font-weight: 600;
+    height: 3em;
+    margin-left: .25em;
+    margin-right: 23em;
+    margin-top: .25em;
+    outline: none;
+    width: 8em;
+}
+
+.HomeInventoryTitle-AddItem {
+    border-style: solid;
+    height: 1.5em;
+    margin-left: -1.45em;
+    margin-top: .2em;
+    padding: .25em;
+    text-align: center;
+    width: 15em;
+}
+
+.PageHeaderContainer-AddItem {
+    display: flex;
+    justify-content: center;
+}
+
+.SaveAddItem {
+    background-color:springgreen;
+    border-radius: 1.5em;
+    font-size: 18pt;
+    font-weight: 600;
+    height: 3em;
+    margin-left: .25em;
+    margin-right: 1em;
+    margin-top: .25em;
+    outline: none;
+    width: 8em;
+}
