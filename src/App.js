@@ -1,15 +1,22 @@
+import React, { useContext, useEffect } from "react"
 import './App.css';
 import { useHistory } from "react-router-dom"
 import { ItemCard } from "./ItemCard"
+import { ItemContext } from "./AppDataProvider"
 
 export function HomePage() {
-
+  const { item, getItems, getItemById, editItems, addItems, deleteItem } = useContext(ItemContext)
   const history = useHistory();
+
+  useEffect(() => {
+    getItems()
+  }, [])
 
   return (
     <>
       <header className="PageHeaderContainer">
         <button className="AddItemButton"
+
           onClick={() => {
             history.push(`/additem`)
           }}
@@ -43,6 +50,7 @@ export function HomePage() {
         </div>
 
         <div className="InventoryContainer">
+
           <div className="InventoryHeader">
             <div className="InventoryNameHeader">Item Name</div>
             <div className="InventoryRoomHeader">Room</div>
@@ -50,24 +58,13 @@ export function HomePage() {
             <div className="InventorySerialHeader">Serial Number</div>
             <div className="InventoryNotesHeader">Notes</div>
           </div>
-
-
-          <div className="ItemCard">
-            <div className="ItemCardContainer">
-              <div className="ItemCardName">Christmas </div>
-              <div className="ItemCardRoom">Living Roomffffffffffffffff</div>
-              <div className="ItemCardDescription">Some ffffffffffffCool Description Here</div>
-              <div className="ItemCardSerial">37286080890</div>
-              <div className="ItemCardNotes">a;kjs;dlkfja;lsdkjf;asljfd</div>
-            </div>
-          </div>
-          {/* <div className="LendReturnedToolsCards">
+          <div className="ItemCardReturn">
             {
-              tool.map(tool => {
-                return <ToolCard key={tool.id} tool={tool} />
+              item.map(item => {
+                return <ItemCard key={item.id} item={item} />
               })
             }
-          </div> */}
+          </div>
         </div>
       </div>
     </>

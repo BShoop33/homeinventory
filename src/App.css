@@ -103,6 +103,74 @@
   width: 15em;
 }
 
+.ItemCardContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.ItemCardDescription {
+  border-bottom: .15em;
+  border-bottom-style: solid;
+  border-left: none;
+  border-right: .15em;
+  border-right-style: dotted;
+  border-top: none;
+  height: 3.75em;
+  overflow: auto;
+  padding-left: .2em;
+  width: 33.4em;
+}
+
+.ItemCardName {
+  border-bottom: .15em;
+  border-bottom-style: solid;
+  border-left: none;
+  border-right: .15em;
+  border-right-style: dotted;
+  border-top: none;
+  height: 3.75em;
+  overflow: auto;
+  padding-left: .2em;
+  width: 16.65em;
+}
+
+.ItemCardNotes {
+  border-bottom: .15em;
+  border-bottom-style: solid;
+  border-left: none;
+  border-top: none;
+  height: 3.75em;
+  overflow: auto;
+  padding-left: .2em;
+  width: 33.4em;
+}
+
+.ItemCardRoom {
+  border-bottom: .15em;
+  border-bottom-style: solid;
+  border-left: none;
+  border-right: .15em;
+  border-right-style: dotted;
+  border-top: none;
+  height: 3.75em;
+  overflow: auto;
+  padding-left: .2em;
+  width: 16.6em;
+}
+
+.ItemCardSerial {
+  border-bottom: .15em;
+  border-bottom-style: solid;
+  border-left: none;
+  border-right: .15em;
+  border-right-style: dotted;
+  border-top: none;
+  height: 3.75em;
+  overflow: auto;
+  padding-left: .2em;
+  width: 16.55em;
+}
+
 .ItemInventoryContainer {
   border-style: solid;
   margin-top: .2em;
@@ -184,80 +252,4 @@
   font-size: 16pt;
   font-weight: 500;
   margin-left: .9em;
-}
-
-
-
-
-
-
-
-
-.ItemCardContainer {
-  display: flex;
-  flex-direction: row;
-}
-
-.ItemCardName {
-  border-bottom: .15em;
-  border-bottom-style: solid;
-  border-left: none;
-  border-right: .15em;
-  border-right-style: dotted;
-  border-top: none;
-  height: 3.75em;
-  overflow: auto;
-  padding-left: .2em;
-  width: 16.65em;
-}
-
-.ItemCardRoom {
-  border-bottom: .15em;
-  border-bottom-style: solid;
-  border-left: none;
-  border-right: .15em;
-  border-right-style: dotted;
-  border-top: none;
-  height: 3.75em;
-  overflow: auto;
-  padding-left: .2em;
-  width: 16.6em;
-}
-
-.ItemCardDescription {
-  border-bottom: .15em;
-  border-bottom-style: solid;
-  border-left: none;
-  border-right: .15em;
-  border-right-style: dotted;
-  border-top: none;
-  height: 3.75em;
-  overflow: auto;
-  padding-left: .2em;
-  width: 33.4em;
-}
-
-.ItemCardSerial {
-  border-bottom: .15em;
-  border-bottom-style: solid;
-  border-left: none;
-  border-right: .15em;
-  border-right-style: dotted;
-  border-top: none;
-  height: 3.75em;
-  overflow: auto;
-  padding-left: .2em;
-  width: 16.55em;
-}
-
-.ItemCardNotes {
-  border-bottom: .15em;
-  border-bottom-style: solid;
-  border-left: none;
-
-  border-top: none;
-  height: 3.75em;
-  overflow: auto;
-  padding-left: .2em;
-  width: 33.4em;
 }

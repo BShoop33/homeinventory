@@ -1,17 +1,30 @@
-// import React from "react"
-// import { ToolCardButtonsContainer } from "./LendDetail"
-// import "./ItemCard.css"
+import React, { useContext } from "react"
+import "./ItemCard.css"
+// import { useHistory } from "react-router-dom"
+// import { ItemContext } from "./AppDataProvider"
 
-// export const ItemCard = ({ tool }) => (
-//     <div className="LendToolsIAmLendingCard">
-//         <img className="NewToolPicture" src={tool.toolpicture ? tool.toolpicture : "/Images/ToolMeOnceLogo.jpg.png"} />
-//         <div className="LendToolInfoContainer">
-//             <ToolCardButtonsContainer tool={tool} />
-//             <div className="LendToolName"><span className="ToolCardToolName">Tool Name:</span>&nbsp;  {tool.toolname}</div>
-//             <div className="LendToolDescription"><span className="ToolCardToolDescription">Tool Description:</span>&nbsp;  {tool.tooldescription}</div>
-//             <div className="LendToolSpecs"><span className="ToolCardToolSpecs">Tool Specifications:</span>&nbsp;  {tool.toolspecs}</div>
-//             <div className="LendToolAccessories"><span className="ToolCardToolAccessories">Tool Accessories:</span>&nbsp;  {tool.toolaccessories}</div>
-//             <div className="LendToolBorrower"><span className="ToolCardBorrowerEmail">Borrower Email:&nbsp;  {tool.borrowerid}</span></div>
-//         </div>
-//     </div>
-// )
+export const ItemCard = ({ item }) =>
+// {
+//     const { deleteItem } = useContext(ItemContext)
+//     const history = useHistory();
+(
+    <>
+        <div className="ItemCard">
+            <div className="ItemCardContainer">
+                <div className="ItemCardName">{item.itemName}</div>
+                <div className="ItemCardRoom">{item.itemRoom}</div>
+                <div className="ItemCardDescription">{item.itemDescription}</div>
+                <div className="ItemCardSerial">{item.itemSerialNumber}</div>
+                <div className="ItemCardNotes">{item.itemNotes}</div>
+                {/* <button className="ItemDeleteButton"
+                        onClick={() => {
+                            deleteItem(item.id)
+                            history.push(`/`)
+                        }}
+                        type="button">Delete
+            </button> */}
+            </div>
+        </div>
+    </>
+)
+// }
