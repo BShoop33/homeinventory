@@ -39,14 +39,6 @@
       "itemSerialNumber": "aaaaaaaaaaaaaaa",
       "itemNotes": "aaaaaaaaaaaaaaa",
       "id": 5
-    },
-    {
-      "itemName": "bbbbbbbbbbbbb",
-      "itemRoom": "Laundry Room",
-      "itemDescription": "bbbbbbbbbbbbbb",
-      "itemSerialNumber": "bbbbbbbbbbbbbbbbb",
-      "itemNotes": "bbbbbbbbbbbbbbbbb",
-      "id": 6
     }
   ]
 }

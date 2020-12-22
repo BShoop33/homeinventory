@@ -50,7 +50,7 @@
   border-right-style: dotted;
   border-top: none;
   text-align: center;
-  width: 30em;
+  width: 25.8em;
 }
 
 .InventoryHeader {
@@ -72,13 +72,13 @@
   border-top: none;
   font-size: 14pt;
   text-align: center;
-  width: 15em;
+  width: 12.95em;
 }
 
 .InventoryNotesHeader {
   font-size: 14pt;
   text-align: center;
-  width: 30em;
+  width: 36.17em;
 }
 
 .InventoryRoomHeader {
@@ -89,7 +89,7 @@
   border-top: none;
   font-size: 14pt;
   text-align: center;
-  width: 15em;
+  width: 12.9em;
 }
 
 .InventorySerialHeader {
@@ -100,7 +100,7 @@
   border-top: none;
   font-size: 14pt;
   text-align: center;
-  width: 15em;
+  width: 12.9em;
 }
 
 .ItemCardContainer {
