@@ -3,7 +3,7 @@ import { Route } from "react-router-dom";
 import { HomePage } from "./App";
 import { AddItem } from "./AddItem";
 import { ItemProvider } from "./AppDataProvider"
-import { ItemCard } from "./ItemCard"
+import { EditItem } from "./EditItem"
 
 export default function ApplicationViews() {
     return (
@@ -23,6 +23,12 @@ export default function ApplicationViews() {
             <ItemProvider>
                 <Route exact path="/additem">
                     <AddItem />
+                </Route>
+            </ItemProvider>
+
+            <ItemProvider>
+                <Route exact path="/edititem/:itemId(\d+)">
+                    <EditItem />
                 </Route>
             </ItemProvider>
         </>

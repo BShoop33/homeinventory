@@ -1,14 +1,6 @@
 {
   "Items": [
     {
-      "id": 1,
-      "itemName": "test",
-      "itemRoom": "test",
-      "itemDescription": "test",
-      "itemSerialNumber": "test",
-      "itemNotes": "test"
-    },
-    {
       "itemName": "ghsdfgh",
       "itemRoom": "Bed Room 1 Closet",
       "itemDescription": "fdghdfghd",
@@ -17,28 +9,20 @@
       "id": 2
     },
     {
-      "itemName": "ghghjhh",
-      "itemRoom": "Bonus Room",
-      "itemDescription": "jhkyukuky",
-      "itemSerialNumber": "ilui;lu;",
-      "itemNotes": "u;ou;uiyo;",
-      "id": 3
+      "itemName": "dfasdfa",
+      "itemRoom": "Bed Room 2 Closet",
+      "itemDescription": "asdfasfdas",
+      "itemSerialNumber": "asdfasfda",
+      "itemNotes": "asdfasfd",
+      "id": 27
     },
     {
-      "itemName": "ggggggg",
-      "itemRoom": "Guest Bathroom",
-      "itemDescription": "ggggggg",
-      "itemSerialNumber": "ggggggggg",
-      "itemNotes": "gggggggggggg",
-      "id": 4
-    },
-    {
-      "itemName": "aaaaaaaaaaaaaaaa",
-      "itemRoom": "Kitchen",
-      "itemDescription": "aaaaaaaaaaaaaaa",
-      "itemSerialNumber": "aaaaaaaaaaaaaaa",
-      "itemNotes": "aaaaaaaaaaaaaaa",
-      "id": 5
+      "itemName": "fffsafda",
+      "itemRoom": "Attic",
+      "itemDescription": "asdfasdfasf",
+      "itemSerialNumber": "ffdsfasf",
+      "itemNotes": "asdfsdfa",
+      "id": 28
     }
   ]
 }

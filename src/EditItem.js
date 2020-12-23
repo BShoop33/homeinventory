@@ -3,12 +3,12 @@ import { ItemContext } from "./AppDataProvider.js"
 import { useHistory, useParams } from "react-router-dom"
 import './AddItem.css';
 
-export function AddItem() {
+export function EditItem() {
+    const { getItems, getItemById, editItems } = useContext(ItemContext)
+    const { itemId } = useParams
     const [item, setNewItem] = useState({})
     const history = useHistory();
-    const { getItemById, addItems, getItems } = useContext(ItemContext)
-    const { itemId } = useParams()
-
+    // const [isLoading, setIsLoading] = useState(true)
     const handleControlledInputChange = (event) => {
         const addedItem = { ...item }
         addedItem[event.target.name] = event.target.value
@@ -21,25 +21,17 @@ export function AddItem() {
                 getItemById(itemId)
                     .then(item => {
                         setNewItem(item)
+                        // setIsLoading(false)
                     })
             } else {
+                // setIsLoading(false)
             }
         })
     }, [getItems, getItemById, itemId])
 
     const constructItemObject = () => {
         // setIsLoading(true)
-        // if (itemId) {
-        //     editItems({
-        //         itemName: item.ItemNameInput,
-        //         itemRoom: item.RoomInput,
-        //         itemDescription: item.itemDescription,
-        //         itemSerialNumber: item.itemSerialNumber,
-        //         itemNotes: item.itemNotes
-        //     })
-        //         .then(() => history.push("/"))
-        // } else {
-        addItems({
+        editItems({
             id: item.id,
             itemName: item.ItemNameInput,
             itemRoom: item.RoomInput,
@@ -48,9 +40,7 @@ export function AddItem() {
             itemNotes: item.itemNotes
         })
             .then(() => history.push("/"))
-        // }
     }
-    // }
 
     return (
         <>
@@ -62,7 +52,7 @@ export function AddItem() {
                 <div className="InputsContainer">
                     <div className="RoomInputContainer">
                         <label className="RoomInputTitle">Room</label>
-                        <select className="RoomInput" name="RoomInput" onChange={handleControlledInputChange}>
+                        <select className="RoomInput" name="RoomInput" onChange={handleControlledInputChange} >
                             <option defaultValue=""></option>
                             <option>Attic</option>
                             <option>Back Yard</option>
@@ -93,7 +83,7 @@ export function AddItem() {
 
                     <div className="ItemNameContainer">
                         <label className="ItemNameTitle">Item Name:  </label>
-                        <input type="text" className="ItemNameInput" name="ItemNameInput" onChange={handleControlledInputChange} placeholder={item.itemName} />
+                        <input type="text" className="ItemNameInput" name="ItemNameInput" onChange={handleControlledInputChange} defaultValue="" placeholder={item.itemName} />
                     </div>
                     <label className="DescriptionTitle">Item Description:  </label>
                     <div className="DescriptionContainer">

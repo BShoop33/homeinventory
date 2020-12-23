@@ -12,6 +12,7 @@
 .BodyContainer {
   height: auto;
   margin-left: .25em;
+  margin-top: 2em;
   width: 99.25%;
 }
 
@@ -27,7 +28,7 @@
 .HomeInventoryTitle {
   border-style: solid;
   height: 1.5em;
-  margin-left: -2em;
+  margin-left: 6em;
   margin-top: .2em;
   padding: .25em;
   text-align: center;
@@ -37,13 +38,15 @@
 .InventoryContainer {
   border: .14em;
   border-style: solid;
-  height: 46em;
+  height: 50em;
   margin-left: .25em;
+  overflow: auto;
   width: 99.25%;
 }
 
 .InventoryDescriptionHeader {
   font-size: 14pt;
+  font-weight: 700;
   border-bottom: none;
   border-left: none;
   border-right: .15em;
@@ -71,14 +74,20 @@
   border-right-style: dotted;
   border-top: none;
   font-size: 14pt;
+  font-weight: 700;
   text-align: center;
   width: 12.95em;
 }
 
 .InventoryNotesHeader {
+  border-bottom: none;
+  border-left: none;
+  border-right: .15em;
+  border-right-style: solid;
   font-size: 14pt;
+  font-weight: 700;
   text-align: center;
-  width: 36.17em;
+  width: 25.75em;
 }
 
 .InventoryRoomHeader {
@@ -88,6 +97,7 @@
   border-right-style: dotted;
   border-top: none;
   font-size: 14pt;
+  font-weight: 700;
   text-align: center;
   width: 12.9em;
 }
@@ -99,6 +109,7 @@
   border-right-style: dotted;
   border-top: none;
   font-size: 14pt;
+  font-weight: 700;
   text-align: center;
   width: 12.9em;
 }
@@ -232,12 +243,12 @@
   margin-left: -.4em;
 }
 
-.Search {
-  border-style: solid;
+.SearchBar {
   font-size: 14pt;
   height: 1em;
-  margin-left: 1em;
-  margin-top: .2em;
+  margin-left: -39.75em;
+  margin-top: 4.75em;
+  margin-bottom: -4em;
   padding: .25em;
   text-align: left;
   width: 25em;
@@ -252,4 +263,8 @@
   font-size: 16pt;
   font-weight: 500;
   margin-left: .9em;
+}
+
+.InventoryBlankHeader {
+  width: 12em;
 }

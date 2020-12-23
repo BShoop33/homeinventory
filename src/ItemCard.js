@@ -16,8 +16,13 @@ export const ItemCard = ({ item }) => {
                     <div className="ItemCardDescription">{item.itemDescription}</div>
                     <div className="ItemCardSerial">{item.itemSerialNumber}</div>
                     <div className="ItemCardNotes">{item.itemNotes}</div>
-                    {/* <DeleteButton item={item} /> */}
-
+                    <button className="ItemEditButton"
+                        onClick={() => {
+                            history.push(`/edititem/${item.id}`)
+                        }
+                        }
+                        type="button">Edit
+                    </button>
                     <button className="ItemDeleteButton"
                         onClick={() => {
                             deleteItem(item.id)
@@ -32,8 +37,3 @@ export const ItemCard = ({ item }) => {
         </>
     )
 }
-// onClick={() => {
-                        //     deleteItem(item.id)
-                        //     history.push(`/`)
-                        // }}
-                        // type="button">Delete
