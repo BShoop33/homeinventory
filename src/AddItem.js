@@ -43,8 +43,8 @@ export const AddItem = () => {
         if (itemId) {
             editItems({
                 id: item.id,
-                itemName: item.ItemNameInput,
-                itemRoom: item.RoomInput,
+                itemName: item.itemName,
+                itemRoom: item.itemRoom,
                 itemDescription: item.itemDescription,
                 itemSerialNumber: item.itemSerialNumber,
                 itemNotes: item.itemNotes
@@ -53,8 +53,8 @@ export const AddItem = () => {
         } else {
             addItems({
                 id: item.id,
-                itemName: item.ItemNameInput,
-                itemRoom: item.RoomInput,
+                itemName: item.itemName,
+                itemRoom: item.itemRoom,
                 itemDescription: item.itemDescription,
                 itemSerialNumber: item.itemSerialNumber,
                 itemNotes: item.itemNotes
@@ -73,8 +73,8 @@ export const AddItem = () => {
                 <div className="InputsContainer">
                     <div className="RoomInputContainer">
                         <label className="RoomInputTitle">Room</label>
-                        <select className="RoomInput" name="RoomInput" onChange={handleControlledInputChange} placeholder={item.itemRoom}>
-                            {/* <option defaultValue={item.itemRoom}></option> */}
+                        <select className="RoomInput" name="itemRoom" onChange={handleControlledInputChange} placeholder={item.itemRoom}>
+                            <option defaultValue={item.itemRoom}></option>
                             <option>Attic</option>
                             <option>Back Yard</option>
                             <option>Bed Room 1</option>
@@ -104,7 +104,7 @@ export const AddItem = () => {
 
                     <div className="ItemNameContainer">
                         <label className="ItemNameTitle">Item Name:  </label>
-                        <input type="text" className="ItemNameInput" name="ItemNameInput" onChange={handleControlledInputChange} placeholder={item.itemName} />
+                        <input type="text" className="ItemNameInput" name="itemName" onChange={handleControlledInputChange} placeholder={item.itemName} />
                     </div>
                     <label className="DescriptionTitle">Item Description:  </label>
                     <div className="DescriptionContainer">
