@@ -24,7 +24,7 @@ export const ItemProvider = (props) => {
             .then(getItems)
     }
 
-    const editItems = item => {
+    const editItems = (item) => {
         return fetch(`http://localhost:8088/Items/${item.id}`, {
             method: "PUT",
             headers: {
