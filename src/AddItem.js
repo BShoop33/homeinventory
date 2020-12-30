@@ -3,54 +3,65 @@ import { ItemContext } from "./AppDataProvider.js"
 import { useHistory, useParams } from "react-router-dom"
 import './AddItem.css';
 
-export function AddItem() {
+export const AddItem = () => {
+    //assigns item variable the state of setNewItem
     const [item, setNewItem] = useState({})
+
+    //assigns history variable the useHistory hook
     const history = useHistory();
-    const { getItemById, addItems, getItems } = useContext(ItemContext)
+
+    //assigns getItemById, addItems, editItems, and getItems variables the values returned by ItemContext
+    const { getItemById, addItems, editItems, getItems } = useContext(ItemContext)
+
+    //assigns itemId variable the route parameter
     const { itemId } = useParams()
 
+    /*assigns addedItem variable the value of an item object. Then returns the value associated with each of the form's named inputs. 
+    Finally stores those returned inputs as a new item object*/
     const handleControlledInputChange = (event) => {
-        const addedItem = { ...item }
+        const addedItem = item
         addedItem[event.target.name] = event.target.value
         setNewItem(addedItem)
     }
 
     useEffect(() => {
-        getItems().then(() => {
-            if (itemId) {
-                getItemById(itemId)
-                    .then(item => {
-                        setNewItem(item)
-                    })
-            } else {
-            }
-        })
-    }, [getItems, getItemById, itemId])
+        getItems()
+    }, [])
+
+    useEffect(() => {
+        if (itemId) {
+            getItemById(itemId)
+                .then(item => {
+                    setNewItem(item)
+                })
+        } else {
+        }
+    }, [getItemById, itemId])
 
     const constructItemObject = () => {
         // setIsLoading(true)
-        // if (itemId) {
-        //     editItems({
-        //         itemName: item.ItemNameInput,
-        //         itemRoom: item.RoomInput,
-        //         itemDescription: item.itemDescription,
-        //         itemSerialNumber: item.itemSerialNumber,
-        //         itemNotes: item.itemNotes
-        //     })
-        //         .then(() => history.push("/"))
-        // } else {
-        addItems({
-            id: item.id,
-            itemName: item.ItemNameInput,
-            itemRoom: item.RoomInput,
-            itemDescription: item.itemDescription,
-            itemSerialNumber: item.itemSerialNumber,
-            itemNotes: item.itemNotes
-        })
-            .then(() => history.push("/"))
-        // }
+        if (itemId) {
+            editItems({
+                id: item.id,
+                itemName: item.ItemNameInput,
+                itemRoom: item.RoomInput,
+                itemDescription: item.itemDescription,
+                itemSerialNumber: item.itemSerialNumber,
+                itemNotes: item.itemNotes
+            })
+                .then(() => history.push("/"))
+        } else {
+            addItems({
+                id: item.id,
+                itemName: item.ItemNameInput,
+                itemRoom: item.RoomInput,
+                itemDescription: item.itemDescription,
+                itemSerialNumber: item.itemSerialNumber,
+                itemNotes: item.itemNotes
+            })
+                .then(() => history.push("/"))
+        }
     }
-    // }
 
     return (
         <>
@@ -62,8 +73,8 @@ export function AddItem() {
                 <div className="InputsContainer">
                     <div className="RoomInputContainer">
                         <label className="RoomInputTitle">Room</label>
-                        <select className="RoomInput" name="RoomInput" onChange={handleControlledInputChange}>
-                            <option defaultValue=""></option>
+                        <select className="RoomInput" name="RoomInput" onChange={handleControlledInputChange} placeholder={item.itemRoom}>
+                            {/* <option defaultValue={item.itemRoom}></option> */}
                             <option>Attic</option>
                             <option>Back Yard</option>
                             <option>Bed Room 1</option>
@@ -97,17 +108,17 @@ export function AddItem() {
                     </div>
                     <label className="DescriptionTitle">Item Description:  </label>
                     <div className="DescriptionContainer">
-                        <textarea type="textarea" className="DescriptionInput" name="itemDescription" onChange={handleControlledInputChange} />
+                        <textarea type="textarea" className="DescriptionInput" name="itemDescription" onChange={handleControlledInputChange} placeholder={item.itemDescription} />
                     </div>
 
                     <div className="ItemSerialContainer">
                         <label className="ItemSerialTitle">Item Serial Number:  </label>
-                        <input type="text" className="ItemSerialInput" name="itemSerialNumber" onChange={handleControlledInputChange} />
+                        <input type="text" className="ItemSerialInput" name="itemSerialNumber" onChange={handleControlledInputChange} placeholder={item.itemSerialNumber} />
                     </div>
 
                     <label className="ItemNotesTitle">Item Notes:  </label>
                     <div className="ItemNotesContainer">
-                        <textarea type="textarea" className="ItemNotesInput" name="itemNotes" onChange={handleControlledInputChange} />
+                        <textarea type="textarea" className="ItemNotesInput" name="itemNotes" onChange={handleControlledInputChange} placeholder={item.itemNotes} />
                     </div>
                 </div>
 
@@ -118,7 +129,7 @@ export function AddItem() {
                             constructItemObject()
                             history.push(`/`)
                         }}
-                        type="button">Save New Item
+                        type="button">Save Item
                     </button>
 
                     <button className="CancelAddItem"

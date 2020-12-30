@@ -1,28 +1,11 @@
 {
   "Items": [
     {
-      "itemName": "ghsdfgh",
-      "itemRoom": "Bed Room 1 Closet",
-      "itemDescription": "fdghdfghd",
-      "itemSerialNumber": "dfghdf",
-      "itemNotes": "dfghdfgh",
-      "id": 2
-    },
-    {
-      "itemName": "dfasdfa",
-      "itemRoom": "Bed Room 2 Closet",
-      "itemDescription": "asdfasfdas",
-      "itemSerialNumber": "asdfasfda",
-      "itemNotes": "asdfasfd",
-      "id": 27
-    },
-    {
-      "itemName": "fffsafda",
-      "itemRoom": "Attic",
-      "itemDescription": "asdfasdfasf",
-      "itemSerialNumber": "ffdsfasf",
-      "itemNotes": "asdfsdfa",
-      "id": 28
+      "id": 1,
+      "itemName": "asfsd",
+      "itemDescription": ".k;uh;uh",
+      "itemSerialNumber": "jhlhglu",
+      "itemNotes": "uygluyt"
     }
   ]
 }

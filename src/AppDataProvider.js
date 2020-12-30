@@ -42,7 +42,7 @@ export const ItemProvider = (props) => {
     }
 
     const getItemById = (id) => {
-        return fetch(`http://localhost:8088/Items${id}`)
+        return fetch(`http://localhost:8088/Items/${id}`)
             .then(res => res.json())
     }
 

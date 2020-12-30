@@ -3,34 +3,41 @@ import { ItemContext } from "./AppDataProvider.js"
 import { useHistory, useParams } from "react-router-dom"
 import './AddItem.css';
 
-export function EditItem() {
+export const EditItem = () => {
     const { getItems, getItemById, editItems } = useContext(ItemContext)
     const { itemId } = useParams
+    const [isLoading, setIsLoading] = useState(true)
     const [item, setNewItem] = useState({})
     const history = useHistory();
-    // const [isLoading, setIsLoading] = useState(true)
+
+
     const handleControlledInputChange = (event) => {
         const addedItem = { ...item }
         addedItem[event.target.name] = event.target.value
         setNewItem(addedItem)
     }
 
+    //The useEffect hook runs after render. First runs the getItems method to return all items. Then if 
     useEffect(() => {
         getItems().then(() => {
             if (itemId) {
                 getItemById(itemId)
                     .then(item => {
                         setNewItem(item)
-                        // setIsLoading(false)
                     })
-            } else {
-                // setIsLoading(false)
+                setIsLoading(false)
             }
+
+            else {
+                console.log("failure")
+                setIsLoading(false)
+            }
+            // })
         })
     }, [getItems, getItemById, itemId])
 
     const constructItemObject = () => {
-        // setIsLoading(true)
+        setIsLoading(true)
         editItems({
             id: item.id,
             itemName: item.ItemNameInput,
@@ -103,6 +110,7 @@ export function EditItem() {
 
                 <div className="AddItemButtonsContainer">
                     <button className="SaveAddItem"
+                        disabled={isLoading}
                         onClick={item => {
                             item.preventDefault()
                             constructItemObject()
@@ -122,3 +130,68 @@ export function EditItem() {
         </>
     );
 }
+
+
+
+
+
+
+// export const LendForm = () => {
+//     const { getTools, getToolById, editTools, addTools } = useContext(LendContext)
+//     const { toolId } = useParams()
+//     const [Tool, setNewTool] = useState({})
+//     const [isLoading, setIsLoading] = useState(true)
+//     const history = useHistory()
+
+//     const handleControlledInputChange = (event) => {
+//         const addedTool = { ...Tool }
+//         addedTool[event.target.name] = event.target.value
+//         setNewTool(addedTool)
+//     }
+
+//     useEffect(() => {
+//         getTools().then(() => {
+//             if (toolId) {
+//                 getToolById(toolId)
+//                     .then(Tool => {
+//                         setNewTool(Tool)
+//                         setIsLoading(false)
+//                     })
+//             } else {
+//                 setIsLoading(false)
+//             }
+//         })
+//     }, [])
+
+//     const constructToolObject = () => {
+//         setIsLoading(true)
+//         if (toolId) {
+//             editTools({
+//                 id: Tool.id,
+//                 userid: localStorage.getItem("ToolMeOnce_Member"),
+//                 borrowerid: Tool.borrowerid,
+//                 imageurl: Tool.imageurl,
+//                 toolstatus: Tool.toolstatus,
+//                 toolname: Tool.AddToolNameInput,
+//                 toolpicture: localStorage.getItem("Tool_Photo"),
+//                 tooldescription: Tool.AddToolDescriptionInput,
+//                 toolspecs: Tool.AddToolSpecificationsInput,
+//                 toolaccessories: Tool.AddToolAccessoriesInput
+//             })
+//                 .then(() => history.push("/Lend"))
+//         } else {
+//             addTools({
+//                 id: Tool.id,
+//                 userid: localStorage.getItem("ToolMeOnce_Member"),
+//                 borrowerid: Tool.borrowerid,
+//                 imageurl: Tool.imageurl,
+//                 toolstatus: true,
+//                 toolpicture: localStorage.getItem("Tool_Photo"),
+//                 toolname: Tool.AddToolNameInput,
+//                 tooldescription: Tool.AddToolDescriptionInput,
+//                 toolspecs: Tool.AddToolSpecificationsInput,
+//                 toolaccessories: Tool.AddToolAccessoriesInput
+//             })
+//                 .then(() => history.push("/Lend"))
+//         }
+//     }
