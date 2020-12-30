@@ -2,43 +2,10 @@
   "Items": [
     {
       "id": 1,
-      "itemName": "test",
-      "itemRoom": "test",
-      "itemDescription": "test",
-      "itemSerialNumber": "test",
-      "itemNotes": "test"
-    },
-    {
-      "itemName": "ghsdfgh",
-      "itemRoom": "Bed Room 1 Closet",
-      "itemDescription": "fdghdfghd",
-      "itemSerialNumber": "dfghdf",
-      "itemNotes": "dfghdfgh",
-      "id": 2
-    },
-    {
-      "itemName": "ghghjhh",
-      "itemRoom": "Bonus Room",
-      "itemDescription": "jhkyukuky",
-      "itemSerialNumber": "ilui;lu;",
-      "itemNotes": "u;ou;uiyo;",
-      "id": 3
-    },
-    {
-      "itemName": "ggggggg",
-      "itemRoom": "Guest Bathroom",
-      "itemDescription": "ggggggg",
-      "itemSerialNumber": "ggggggggg",
-      "itemNotes": "gggggggggggg",
-      "id": 4
-    },
-    {
-      "itemName": "aaaaaaaaaaaaaaaa",
-      "itemRoom": "Kitchen",
-      "itemDescription": "aaaaaaaaaaaaaaa",
-      "itemSerialNumber": "aaaaaaaaaaaaaaa",
-      "itemNotes": "aaaaaaaaaaaaaaa",
-      "id": 5
+      "itemName": "asfsd",
+      "itemDescription": ".k;uh;uh",
+      "itemSerialNumber": "jhlhglu",
+      "itemNotes": "uygluyt"
     }
   ]
 }

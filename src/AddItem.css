@@ -1,18 +1,19 @@
 .AddItemButtonsContainer {
     margin-top: 1em;
+    
 }
 
 .CancelAddItem {
     background-color:lightcoral;
     border-radius: 1.5em;
     font-size: 18pt;
-    font-weight: 600;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 800;
     height: 3em;
     margin-left: .25em;
-    margin-right: 23em;
     margin-top: .25em;
     outline: none;
-    width: 8em;
+    width: 12em;
 }
 
 .DescriptionContainer  {
@@ -21,22 +22,25 @@
 }
 
 .DescriptionInput {
-    font-size: 16pt;
-    font-weight: 500;
+    font-size: 14pt;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
     height: 10em;
-    margin-left: 1.75em;
+    margin-left: 4em;
     margin-top: .1em;
-    width: 21.5em;
+    width: 24.5em;
 }
 
 .DescriptionTitle {
     font-size: 16pt;
-    font-weight: 500;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 800;
     margin-top: 1em;
 }
 
 .HomeInventoryTitle-AddItem {
     border-style: solid;
+    font-family: 'Open Sans', sans-serif;
     height: 1.5em;
     margin-left: -1.45em;
     margin-top: .2em;
@@ -53,16 +57,18 @@
 
 .ItemNameInput {
     font-size: 14pt;
-    font-weight: 500;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
     height: auto;
-    margin-left: 5em;
+    margin-left: 6.2em;
     margin-top: 1.2em;
     width: 24.5em;
 }
 
 .ItemNameTitle {
     font-size: 16pt;
-    font-weight: 500;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 800;
 }
 
 .ItemNotesContainer  {
@@ -71,32 +77,36 @@
 }
 
 .ItemNotesInput {
-    font-size: 16pt;
-    font-weight: 500;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14pt;
+    font-weight: 600;
     height: 10em;
-    margin-left: 1.7em;
+    margin-left: 4em;
     margin-top: -2em;
-    width: 21.5em;
+    width: 24.5em;
 }
 
 .ItemNotesTitle {
+    font-family: 'Open Sans', sans-serif;
     font-size: 16pt;
-    font-weight: 500;
+    font-weight: 800;
     margin-top: 1em;
 }
 
 .ItemSerialInput {
+    font-family: 'Open Sans', sans-serif;
     font-size: 14pt;
-    font-weight: 500;
+    font-weight: 600;
     height: auto;
-    margin-left: .6em;
+    margin-left: 1.2em;
     margin-top: 1em;
     width: 24.5em;
 }
 
 .ItemSerialTitle {
+    font-family: 'Open Sans', sans-serif;
     font-size: 16pt;
-    font-weight: 500;
+    font-weight: 800;
 }
 
 .PageHeaderContainer-AddItem {
@@ -105,26 +115,29 @@
 }
 
 .RoomInput {
+    font-family: 'Open Sans', sans-serif;
     font-size: 14pt;
-    font-weight: 500;
-    margin-left: 8.3em;
+    font-weight: 600;
+    margin-left: 10em;
     width: 25em;
 }
 
 .RoomInputTitle {
+    font-family: 'Open Sans', sans-serif;
     font-size: 16pt;
-    font-weight: 500;
+    font-weight: 800;
 }
 
 .SaveAddItem {
     background-color:springgreen;
     border-radius: 1.5em;
+    font-family: 'Open Sans', sans-serif;
     font-size: 18pt;
-    font-weight: 600;
+    font-weight: 800;
     height: 3em;
-    margin-left: 5em;
+    margin-left: 2.5em;
     margin-right: 1em;
     margin-top: .25em;
     outline: none;
-    width: 8em;
+    width: 12em;
 }

@@ -1,7 +1,16 @@
 .ItemDeleteButton {
-    width: 10em;
+    width: 4.95em;
     height: 2.9em;
     background-color: lightcoral;
+    font-size: 16pt;
+    border-bottom: .15em;
+    border-bottom-style: solid;
+}
+
+.ItemEditButton {
+    width: 4.95em;
+    height: 2.9em;
+    background-color: goldenrod;
     font-size: 16pt;
     border-bottom: .15em;
     border-bottom-style: solid;

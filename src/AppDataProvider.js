@@ -4,6 +4,7 @@ export const ItemContext = createContext()
 
 export const ItemProvider = (props) => {
     const [item, setItems] = useState([])
+    const [searchTerms, setSearchTerms] = useState()
 
     const addItems = (item) => {
         return fetch("http://localhost:8088/Items", {
@@ -41,13 +42,13 @@ export const ItemProvider = (props) => {
     }
 
     const getItemById = (id) => {
-        return fetch(`http://localhost:8088/Items${id}`)
+        return fetch(`http://localhost:8088/Items/${id}`)
             .then(res => res.json())
     }
 
     return (
         <ItemContext.Provider value={{
-            item, addItems, deleteItem, editItems, getItems, getItemById
+            item, addItems, deleteItem, editItems, getItems, getItemById, searchTerms, setSearchTerms
         }}>
             {props.children}
         </ItemContext.Provider>
