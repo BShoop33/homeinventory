@@ -4,9 +4,10 @@ import { useHistory } from "react-router-dom"
 import { ItemCard } from "./ItemCard"
 import { ItemContext } from "./AppDataProvider"
 import { ItemSearch } from "./SearchTerms"
+import { RoomFilter } from "./RoomFilter"
 
 export function HomePage() {
-  const { item, getItems, searchTerms } = useContext(ItemContext)
+  const { item, getItems, searchTerms, roomFilter } = useContext(ItemContext)
   const history = useHistory();
   const [filteredItems, setFiltered] = useState([])
 
@@ -18,10 +19,13 @@ export function HomePage() {
     if (searchTerms !== "") {
       const subset = item.filter(item => item.itemName.toLowerCase().includes(searchTerms.toLowerCase().trim()))
       setFiltered(subset)
+    } else if (roomFilter !== "") {
+      const subset2 = item.filter(item => item.itemRoom.includes(roomFilter))
+      setFiltered(subset2)
     } else {
       setFiltered(item)
     }
-  }, [searchTerms, item])
+  }, [searchTerms, roomFilter, item])
 
   return (
     <>
@@ -33,6 +37,7 @@ export function HomePage() {
           type="button">Add New Item
         </button>
         <ItemSearch key={item.id} item={item} />
+        <RoomFilter key={item.id} item={item} />
         <h1 className="HomeInventoryTitle">Home Inventory</h1>
       </header>
       <div className="BodyContainer">

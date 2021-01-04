@@ -27,8 +27,10 @@
 
 .HomeInventoryTitle {
   border-style: solid;
+  font-family: 'Open Sans', sans-serif;
   height: 1.5em;
-  margin-left: 6em;
+  margin-bottom: .35em;
+  margin-left: -9em;
   margin-top: .2em;
   padding: .25em;
   text-align: center;
@@ -232,7 +234,7 @@
   margin-left: -.5em;
   margin-top: .2em;
   overflow: auto;
-  padding: .25em;
+  
   text-align: center;
   width: 25em;
 }
@@ -248,7 +250,7 @@
   height: 1em;
   margin-left: -39.75em;
   margin-top: 4.75em;
-  margin-bottom: -4em;
+  margin-bottom: -1.1em;
   padding: .25em;
   text-align: left;
   width: 25em;
@@ -267,4 +269,10 @@
 
 .InventoryBlankHeader {
   width: 12em;
+}
+
+.RoomFilter {
+  margin-top: 4.75em;
+  margin-left: 1em;
+  margin-bottom: -1.25em;
 }

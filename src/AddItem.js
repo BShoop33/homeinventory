@@ -38,6 +38,10 @@ export const AddItem = () => {
         }
     }, [getItemById, itemId])
 
+
+
+
+
     const constructItemObject = () => {
         // setIsLoading(true)
         if (itemId) {
@@ -73,8 +77,9 @@ export const AddItem = () => {
                 <div className="InputsContainer">
                     <div className="RoomInputContainer">
                         <label className="RoomInputTitle">Room</label>
-                        <select className="RoomInput" name="itemRoom" onChange={handleControlledInputChange} placeholder={item.itemRoom}>
-                            <option defaultValue={item.itemRoom}></option>
+                        <select className="RoomInput" name="itemRoom" onChange={handleControlledInputChange} >
+                            {/* <option defaultValue={itemId ? item.itemRoom : ""}></option> */}
+                            <option selected>{itemId ? item.itemRoom : ""}</option>
                             <option>Attic</option>
                             <option>Back Yard</option>
                             <option>Bed Room 1</option>
@@ -102,23 +107,24 @@ export const AddItem = () => {
                         </select>
                     </div>
 
-                    <div className="ItemNameContainer">
+                    <form action="/action_page.php">
                         <label className="ItemNameTitle">Item Name:  </label>
-                        <input type="text" className="ItemNameInput" name="itemName" onChange={handleControlledInputChange} placeholder={item.itemName} />
-                    </div>
+                        <input type="text" className="ItemNameInput" name="itemName" onChange={handleControlledInputChange} placeholder={itemId ? item.itemName : ""} />
+                    </form>
+
                     <label className="DescriptionTitle">Item Description:  </label>
                     <div className="DescriptionContainer">
-                        <textarea type="textarea" className="DescriptionInput" name="itemDescription" onChange={handleControlledInputChange} placeholder={item.itemDescription} />
+                        <textarea type="textarea" className="DescriptionInput" name="itemDescription" onChange={handleControlledInputChange} placeholder={itemId ? item.itemDescription : ""} />
                     </div>
 
                     <div className="ItemSerialContainer">
                         <label className="ItemSerialTitle">Item Serial Number:  </label>
-                        <input type="text" className="ItemSerialInput" name="itemSerialNumber" onChange={handleControlledInputChange} placeholder={item.itemSerialNumber} />
+                        <input type="text" className="ItemSerialInput" name="itemSerialNumber" onChange={handleControlledInputChange} placeholder={itemId ? item.itemSerialNumber : ""} />
                     </div>
 
                     <label className="ItemNotesTitle">Item Notes:  </label>
                     <div className="ItemNotesContainer">
-                        <textarea type="textarea" className="ItemNotesInput" name="itemNotes" onChange={handleControlledInputChange} placeholder={item.itemNotes} />
+                        <textarea type="textarea" className="ItemNotesInput" name="itemNotes" onChange={handleControlledInputChange} placeholder={itemId ? item.itemNotes : ""} />
                     </div>
                 </div>
 
