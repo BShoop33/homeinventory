@@ -10,29 +10,28 @@ export const ItemCard = ({ item }) => {
     return (
         <>
             <div className="ItemCard">
-                <div className="ItemCardContainer">
-                    <div className="ItemCardName">{item.itemName}</div>
-                    <div className="ItemCardRoom">{item.itemRoom}</div>
-                    <div className="ItemCardDescription">{item.itemDescription}</div>
-                    <div className="ItemCardSerial">{item.itemSerialNumber}</div>
-                    <div className="ItemCardNotes">{item.itemNotes}</div>
-                    <button className="ItemEditButton"
-                        onClick={() => {
-                            history.push(`/edititem/${item.id}`)
-                        }
-                        }
-                        type="button">Edit
+                <col-1 style={{ marginRight: 20, marginLeft: 20 }}>{item.itemName}</col-1>
+                <col-2 style={{ marginRight: 20, marginLeft: 20 }}>{item.itemLocation}</col-2>
+                <col-3 style={{ marginRight: 20, marginLeft: 20 }}>{item.itemDescription}</col-3>
+                <col-4 style={{ marginRight: 20, marginLeft: 20 }}>{item.itemSerialNumber}</col-4>
+                <col-5 style={{ marginRight: 20, marginLeft: 20 }}>{item.itemNotes}</col-5>
+
+                <button className="ItemEditButton"
+                    onClick={() => {
+                        history.push(`/edititem/${item.id}`)
+                    }
+                    }
+                    type="button">Edit
+                </button>
+                <button className="ItemDeleteButton"
+                    onClick={() => {
+                        deleteItem(item.id)
+                            .then(() => {
+                                history.push(`/`)
+                            })
+                    }}
+                    type="button">Delete
                     </button>
-                    <button className="ItemDeleteButton"
-                        onClick={() => {
-                            deleteItem(item.id)
-                                .then(() => {
-                                    history.push(`/`)
-                                })
-                        }}
-                        type="button">Delete
-                    </button>
-                </div>
             </div>
         </>
     )

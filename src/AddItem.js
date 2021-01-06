@@ -48,7 +48,7 @@ export const AddItem = () => {
             editItems({
                 id: item.id,
                 itemName: item.itemName,
-                itemRoom: item.itemRoom,
+                itemLocation: item.itemRoom,
                 itemDescription: item.itemDescription,
                 itemSerialNumber: item.itemSerialNumber,
                 itemNotes: item.itemNotes
@@ -58,7 +58,7 @@ export const AddItem = () => {
             addItems({
                 id: item.id,
                 itemName: item.itemName,
-                itemRoom: item.itemRoom,
+                itemLocation: item.itemRoom,
                 itemDescription: item.itemDescription,
                 itemSerialNumber: item.itemSerialNumber,
                 itemNotes: item.itemNotes
@@ -73,37 +73,36 @@ export const AddItem = () => {
                 <h1 className="HomeInventoryTitle-AddItem">Home Inventory</h1>
             </header>
 
+
+
+
+
+
+
+
             <div className="BodyContainer">
                 <div className="InputsContainer">
+
                     <div className="RoomInputContainer">
                         <label className="RoomInputTitle">Room</label>
                         <select className="RoomInput" name="itemRoom" onChange={handleControlledInputChange} >
                             {/* <option defaultValue={itemId ? item.itemRoom : ""}></option> */}
-                            <option selected>{itemId ? item.itemRoom : ""}</option>
-                            <option>Attic</option>
-                            <option>Back Yard</option>
-                            <option>Bed Room 1</option>
-                            <option>Bed Room 1 Closet</option>
-                            <option>Bed Room 2</option>
-                            <option>Bed Room 2 Closet</option>
-                            <option>Bed Room 3</option>
-                            <option>Bed Room 3 Closet</option>
-                            <option>Bonus Room</option>
-                            <option>Dining Room</option>
-                            <option>Downstairs Bathroom</option>
-                            <option>Downstairs Closet</option>
-                            <option>Foyer</option>
-                            <option>Front Porch</option>
-                            <option>Front Yard</option>
-                            <option>Garage</option>
-                            <option>Guest Bathroom</option>
-                            <option>Kitchen</option>
-                            <option>Laundry Room</option>
-                            <option>Living Room</option>
-                            <option>Main Bathroom</option>
-                            <option>Mud Room</option>
-                            <option>Patio</option>
-                            <option>Stairwell</option>
+                            <option selected>{itemId ? item.itemLocation : ""}</option>
+                            <option>AmSurg PAR 1</option>
+                            <option>AmSurg PAR 2</option>
+                            <option>AmSurg PAR 3</option>
+                            <option>Emergency Room PAR 1</option>
+                            <option>Emergency Room PAR 2</option>
+                            <option>ICU PAR 1</option>
+                            <option>ICU PAR 2</option>
+                            <option>Gastroenterology PAR 1</option>
+                            <option>Hematology PAR 1</option>
+                            <option>Hematology PAR 2</option>
+                            <option>Materials Management</option>
+                            <option>Neurology PAR 1</option>
+                            <option>Pharmacy</option>
+                            <option>Store Room 1</option>
+                            <option>Store Room 2</option>
                         </select>
                     </div>
 
@@ -149,3 +148,6 @@ export const AddItem = () => {
         </>
     );
 }
+
+
+

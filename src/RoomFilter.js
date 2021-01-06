@@ -1,16 +1,49 @@
-import React, { useContext, useEffect } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import { ItemContext } from "./AppDataProvider"
-import "./App.css"
+//import "./App.css"
+import NavDropdown from 'react-bootstrap/NavDropdown';
+
+import DropdownButton from 'react-bootstrap/DropdownButton';
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
+import Dropdown from 'react-bootstrap/Dropdown';
+
 
 export const RoomFilter = () => {
     const { setRoomFilter } = useContext(ItemContext)
-
+    const [value, setValue] = useState('');
     useEffect(() => {
         setRoomFilter("")
     }, [setRoomFilter])
 
+    const handleSelect = (e) => {
+        setValue(e)
+    }
+
     return (
         <>
+            {['Primary'].map(
+                (variant) => (
+                    <DropdownButton
+                        as={ButtonGroup}
+                        key={variant}
+                        id={`dropdown-variants-${variant}`}
+                        variant={variant.toLowerCase()}
+                        title={variant}
+                        onSelect={handleSelect}
+                    >
+                        <Dropdown.Item as="button">Attic</Dropdown.Item>
+                        <Dropdown.Item eventKey="2">Another action</Dropdown.Item>
+                        <Dropdown.Item eventKey="3" active>
+                            Active Item
+                    </Dropdown.Item>
+                        <Dropdown.Divider />
+                        <Dropdown.Item eventKey="4">Separated link</Dropdown.Item>
+                    </DropdownButton>
+                ),
+            )}
+
+
+            {/* 
             <select className="RoomFilter" name="roomFilter" onChange={
                 (changeEvent) => setRoomFilter(changeEvent.target.value)
             } >
@@ -39,7 +72,7 @@ export const RoomFilter = () => {
                 <option>Mud Room</option>
                 <option>Patio</option>
                 <option>Stairwell</option>
-            </select>
+            </select> */}
         </>
     )
 }

@@ -6,12 +6,14 @@ import { ItemProvider } from "./AppDataProvider"
 //import { EditItem } from "./EditItem"
 import { ItemCard } from "./ItemCard"
 
+import { TestPage } from "./Test"
+
 export default function ApplicationViews() {
     return (
         <>
             <ItemProvider>
                 <Route exact path="/">
-                    <HomePage />
+                    <TestPage />
                 </Route>
             </ItemProvider>
 
