@@ -141,3 +141,39 @@
     outline: none;
     width: 12em;
 } */
+
+
+.AddItemHeader {
+    margin-left: .5em;
+    margin-bottom: .25em;
+}
+
+.LocationTitle {
+    margin-left: 1.35em;
+}
+
+.hr-AddItem {
+    height:2px;
+    border-width:0;
+    color:gray;
+    background-color:gray;
+    width: 98.25%;
+    margin-top: .25em;
+    margin-bottom: 1em;
+}
+
+.ItemNameTitle {
+    margin-left: 1.35em;
+}
+
+.DescriptionTitle {
+    margin-left: 1.35em;
+}
+
+.ItemSerialTitle {
+    margin-left: 1.35em;
+}
+
+.ItemNotesTitle {
+    margin-left: 1.35em;
+}
