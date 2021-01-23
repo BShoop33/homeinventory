@@ -1,14 +1,23 @@
-import React, { useContext, useEffect, useState } from "react"
+import React, { useContext, useEffect, useState, useRef } from "react"
 import { ItemContext } from "./AppDataProvider.js"
 import { useHistory, useParams } from "react-router-dom"
 import { Route, withRouter } from 'react-router-dom';
 import './AddItem.css';
 import Row from "react-bootstrap/Row"
 import Button from "react-bootstrap/Button"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 export const AddItem = () => {
     //assigns item variable the state of setNewItem
-    const [item, setNewItem] = useState({})
+    const [item, setNewItem] = useState({});
+
+    const itemLocation = useRef();
+    const itemName = useRef();
+    const itemDescription = useRef();
+    const itemSerialNumber = useRef();
+    const itemNotes = useRef();
 
     //assigns history variable the useHistory hook
     const history = useHistory();
@@ -20,7 +29,7 @@ export const AddItem = () => {
     const { itemId } = useParams()
 
     /*assigns addedItem variable the value of an item object. Then returns the value associated with each of the form's named inputs. 
-    Finally stores those returned inputs as a new item object*/
+Finally stores those returned inputs as a new item object*/
     const handleControlledInputChange = (event) => {
         const addedItem = item
         addedItem[event.target.name] = event.target.value
@@ -41,28 +50,67 @@ export const AddItem = () => {
         }
     }, [getItemById, itemId])
 
+
+    const showToast1 = () => {
+        toast.error("Item Location is a required field")
+    };
+
+    const showToast2 = () => {
+        toast.error("Item Name is a required field")
+    };
+
+    const showToast3 = () => {
+        toast.error("Item Description is a required field")
+    };
+
+    const showToast4 = () => {
+        toast.error("Item Serial Number is a required field")
+    };
+
+    const showToast5 = () => {
+        toast.error("Item Notes is a required field")
+    };
+
+
     const constructItemObject = () => {
         // setIsLoading(true)
-        if (itemId) {
-            editItems({
-                id: item.id,
-                itemName: item.itemName,
-                itemLocation: item.itemRoom,
-                itemDescription: item.itemDescription,
-                itemSerialNumber: item.itemSerialNumber,
-                itemNotes: item.itemNotes
-            })
-                .then(() => history.push("/"))
-        } else {
-            addItems({
-                id: item.id,
-                itemName: item.itemName,
-                itemLocation: item.itemRoom,
-                itemDescription: item.itemDescription,
-                itemSerialNumber: item.itemSerialNumber,
-                itemNotes: item.itemNotes
-            })
-                .then(() => history.push("/"))
+        if (itemLocation.current.value === "") {
+            showToast1();
+        }
+        else if (itemName.current.value === "") {
+            showToast2();
+        }
+        else if (itemDescription.current.value === "") {
+            showToast3();
+        }
+        else if (itemSerialNumber.current.value === "") {
+            showToast4();
+        }
+        else if (itemNotes.current.value === "") {
+            showToast5();
+        }
+        else {
+            if (itemId) {
+                editItems({
+                    id: item.id,
+                    itemName: item.itemName,
+                    itemLocation: item.itemRoom,
+                    itemDescription: item.itemDescription,
+                    itemSerialNumber: item.itemSerialNumber,
+                    itemNotes: item.itemNotes
+                })
+                    .then(() => history.push("/"))
+            } else {
+                addItems({
+                    id: item.id,
+                    itemName: item.itemName,
+                    itemLocation: item.itemRoom,
+                    itemDescription: item.itemDescription,
+                    itemSerialNumber: item.itemSerialNumber,
+                    itemNotes: item.itemNotes
+                })
+                    .then(() => history.push("/"))
+            }
         }
     }
 
@@ -70,13 +118,15 @@ export const AddItem = () => {
         <>
             <h1 className="AddItemHeader">Inventory</h1>
             <hr className="hr-AddItem" />
-            <Row className="justify-content-md-left">
-                <label style={{ width: 200, height: 5 }} className="LocationTitle">Location</label>
+            <p className="requiredField"><i>* Required</i></p>
+            <Row style={{ marginTop: -15 }} className="justify-content-md-left">
+                <label style={{ width: 200, height: 5 }} className="LocationTitle">Item Location</label>
                 <select style={{ width: 400, height: 35 }}
                     className="RoomInput"
                     name="itemRoom"
                     onChange={handleControlledInputChange}
-                // defaultValue={itemId ? item.itemRoom : ""}
+                    ref={itemLocation}
+                // defaultValue={itemId ? item.itemLocation : ""}
                 >
                     <option selected>{itemId ? item.itemLocation : ""}</option>
                     <option>AmSurg PAR 1</option>
@@ -96,26 +146,27 @@ export const AddItem = () => {
                     <option>Store Room 2</option>
                 </select>
             </Row>
-            <Row style={{ marginTop: 20 }} className="justify-content-md-left">
+            <p className="requiredField"><i>* Required</i></p>
+            <Row style={{ marginTop: -15 }} className="justify-content-md-left">
                 <form action="/action_page.php">
                     <label style={{ width: 200, height: 5 }} className="ItemNameTitle">Item Name:  </label>
-                    <input style={{ width: 400, height: 35 }} type="text" className="ItemNameInput" name="itemName" onChange={handleControlledInputChange} placeholder={itemId ? item.itemName : ""} />
+                    <input style={{ width: 400, height: 35 }} type="text" ref={itemName} className="ItemNameInput" name="itemName" onChange={handleControlledInputChange} placeholder={itemId ? item.itemName : ""} />
                 </form>
             </Row>
-
-            <Row style={{ marginTop: 20 }} className="justify-content-md-left">
+            <p className="requiredField"><i>* Required</i></p>
+            <Row style={{ marginTop: -15 }} className="justify-content-md-left">
                 <label style={{ width: 200, height: 5 }} className="DescriptionTitle">Item Description:  </label>
-                <textarea style={{ width: 400, height: 100 }} type="textarea" className="DescriptionInput" name="itemDescription" onChange={handleControlledInputChange} placeholder={itemId ? item.itemDescription : ""} />
+                <textarea style={{ width: 400, height: 100 }} type="textarea" ref={itemDescription} className="DescriptionInput" name="itemDescription" onChange={handleControlledInputChange} placeholder={itemId ? item.itemDescription : ""} />
             </Row>
-
-            <Row style={{ marginTop: 20 }} className="justify-content-md-left">
+            <p className="requiredField"><i>* Required</i></p>
+            <Row style={{ marginTop: -15 }} className="justify-content-md-left">
                 <label style={{ width: 197, height: 5 }} className="ItemSerialTitle">Item Serial Number:  </label>
-                <input style={{ width: 400, height: 35 }} type="text" className="ItemSerialInput" name="itemSerialNumber" onChange={handleControlledInputChange} placeholder={itemId ? item.itemSerialNumber : ""} />
+                <input style={{ width: 400, height: 35 }} type="text" ref={itemSerialNumber} className="ItemSerialInput" name="itemSerialNumber" onChange={handleControlledInputChange} placeholder={itemId ? item.itemSerialNumber : ""} />
             </Row>
-
-            <Row style={{ marginTop: 20 }} className="justify-content-md-left">
+            <p className="requiredField"><i>* Required</i></p>
+            <Row style={{ marginTop: -15 }} className="justify-content-md-left">
                 <label style={{ width: 197, height: 5 }} className="ItemNotesTitle">Item Notes:  </label>
-                <textarea style={{ width: 400, height: 100 }} type="textarea" className="ItemNotesInput" name="itemNotes" onChange={handleControlledInputChange} placeholder={itemId ? item.itemNotes : ""} />
+                <textarea style={{ width: 400, height: 100 }} type="textarea" ref={itemNotes} className="ItemNotesInput" name="itemNotes" onChange={handleControlledInputChange} placeholder={itemId ? item.itemNotes : ""} />
             </Row>
 
             <Row style={{ marginTop: 20 }} className="justify-content-md-left">
@@ -125,7 +176,7 @@ export const AddItem = () => {
                     onClick={item => {
                         item.preventDefault()
                         constructItemObject()
-                        history.push(`/`)
+                        // history.push(`/`)
                     }}
                     type="button">Save Item
                 </Button>
@@ -139,6 +190,28 @@ export const AddItem = () => {
                     }}
                     type="submit">Cancel
                 </Button>
+
+                {/* <Button
+                    style={{ width: 150, marginLeft: 30 }}
+                    variant="danger"
+                    className="CancelAddItem"
+                    onClick={showToast}
+                    type="submit">Toast
+                </Button>
+                 */}
+                <ToastContainer
+                    position="top-center"
+                    autoClose={2000}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+
+                />
+
             </Row>
         </>
     );
