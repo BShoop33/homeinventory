@@ -1,6 +1,6 @@
-.ItemDeleteButton {
-    width: 4.95em;
-    height: 2.9em;
+/* .ItemDeleteButton {
+    width: 3em;
+    height: 2em;
     background-color: lightcoral;
     font-size: 16pt;
     border-bottom: .15em;
@@ -8,10 +8,21 @@
 }
 
 .ItemEditButton {
-    width: 4.95em;
-    height: 2.9em;
+    width: 3em;
+    height: 2em;
     background-color: goldenrod;
     font-size: 16pt;
     border-bottom: .15em;
     border-bottom-style: solid;
+} */
+
+#border {
+    border-left-color: gray;
+    border-left-width: .1em;
+    border-left-style: solid;
+    border-bottom-color: gray;
+    border-bottom-width: .1em;
+    border-bottom-style: dotted;
+    padding-top: .5em;
+    padding-bottom: .6em;
 }
