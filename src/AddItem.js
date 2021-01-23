@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react"
 import { ItemContext } from "./AppDataProvider.js"
 import { useHistory, useParams } from "react-router-dom"
+import { Route, withRouter } from 'react-router-dom';
 import './AddItem.css';
 import Row from "react-bootstrap/Row"
 import Button from "react-bootstrap/Button"
@@ -68,11 +69,15 @@ export const AddItem = () => {
     return (
         <>
             <h1 className="AddItemHeader">Inventory</h1>
-            <hr class="hr-AddItem" />
+            <hr className="hr-AddItem" />
             <Row className="justify-content-md-left">
                 <label style={{ width: 200, height: 5 }} className="LocationTitle">Location</label>
-                <select style={{ width: 400, height: 35 }} className="RoomInput" name="itemRoom" onChange={handleControlledInputChange} >
-                    {/* <option defaultValue={itemId ? item.itemRoom : ""}></option> */}
+                <select style={{ width: 400, height: 35 }}
+                    className="RoomInput"
+                    name="itemRoom"
+                    onChange={handleControlledInputChange}
+                // defaultValue={itemId ? item.itemRoom : ""}
+                >
                     <option selected>{itemId ? item.itemLocation : ""}</option>
                     <option>AmSurg PAR 1</option>
                     <option>AmSurg PAR 2</option>

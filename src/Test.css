@@ -27,11 +27,9 @@ html {
 }
 
 .hr-text {
-  height:2px;
-  border-width:0;
-  color:gray;
+  height:.05em;
   background-color:gray;
   width: 98.25%;
   margin-top: .25em;
-  margin-bottom: .25em;
+  margin-bottom: .0em;
 }

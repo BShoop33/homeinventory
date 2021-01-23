@@ -113,11 +113,11 @@ export function TestPage() {
             <Row className="justify-content-md-left">
                 <Col md="2">Item Name</Col>
                 <Col md="2">Location</Col>
-                <Col md="2">Description</Col>
-                <Col md="2">Serial Number</Col>
-                <Col md="2">Notes</Col>
+                <Col md="3">Description</Col>
+                <Col md="1">Serial Number</Col>
+                <Col md="3">Notes</Col>
             </Row>
-            <hr class="hr-text" />
+            <hr className="hr-text" />
             {
                 filteredItems.map(item => {
                     return <ItemCard key={item.id} item={item} />

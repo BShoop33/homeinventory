@@ -6,11 +6,6 @@ import { ItemContext } from "./AppDataProvider"
 import { ItemSearch } from "./SearchTerms"
 import { RoomFilter } from "./RoomFilter"
 
-import Jumbotron from 'react-bootstrap/Jumbotron';
-import Container from 'react-bootstrap/Container';
-import Button from 'react-bootstrap/Button';
-
-
 export function HomePage() {
 
   const { item, getItems, searchTerms, roomFilter } = useContext(ItemContext)
@@ -65,10 +60,6 @@ export function HomePage() {
           </div>
         </div>
       </div>
-
-
-
-
     </>
   );
 }
