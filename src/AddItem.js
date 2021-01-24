@@ -13,11 +13,11 @@ export const AddItem = () => {
     //assigns item variable the state of setNewItem
     const [item, setNewItem] = useState({});
 
-    const itemLocation = useRef();
     const itemName = useRef();
     const itemDescription = useRef();
     const itemSerialNumber = useRef();
     const itemNotes = useRef();
+    const itemLocation = useRef();
 
     //assigns history variable the useHistory hook
     const history = useHistory();
@@ -94,7 +94,7 @@ Finally stores those returned inputs as a new item object*/
                 editItems({
                     id: item.id,
                     itemName: item.itemName,
-                    itemLocation: item.itemRoom,
+                    itemLocation: itemLocation.current.value,
                     itemDescription: item.itemDescription,
                     itemSerialNumber: item.itemSerialNumber,
                     itemNotes: item.itemNotes
@@ -126,9 +126,8 @@ Finally stores those returned inputs as a new item object*/
                     name="itemRoom"
                     onChange={handleControlledInputChange}
                     ref={itemLocation}
-                // defaultValue={itemId ? item.itemLocation : ""}
                 >
-                    <option selected>{itemId ? item.itemLocation : ""}</option>
+                    <option defaultValue>{itemId ? item.itemLocation : ""}</option>
                     <option>AmSurg PAR 1</option>
                     <option>AmSurg PAR 2</option>
                     <option>AmSurg PAR 3</option>
@@ -150,23 +149,23 @@ Finally stores those returned inputs as a new item object*/
             <Row style={{ marginTop: -15 }} className="justify-content-md-left">
                 <form action="/action_page.php">
                     <label style={{ width: 200, height: 5 }} className="ItemNameTitle">Item Name:  </label>
-                    <input style={{ width: 400, height: 35 }} type="text" ref={itemName} className="ItemNameInput" name="itemName" onChange={handleControlledInputChange} placeholder={itemId ? item.itemName : ""} />
+                    <input style={{ width: 400, height: 35 }} type="text" ref={itemName} className="ItemNameInput" name="itemName" onChange={handleControlledInputChange} defaultValue={itemId ? item.itemName : ""} />
                 </form>
             </Row>
             <p className="requiredField"><i>* Required</i></p>
             <Row style={{ marginTop: -15 }} className="justify-content-md-left">
                 <label style={{ width: 200, height: 5 }} className="DescriptionTitle">Item Description:  </label>
-                <textarea style={{ width: 400, height: 100 }} type="textarea" ref={itemDescription} className="DescriptionInput" name="itemDescription" onChange={handleControlledInputChange} placeholder={itemId ? item.itemDescription : ""} />
+                <textarea style={{ width: 400, height: 100 }} type="textarea" ref={itemDescription} className="DescriptionInput" name="itemDescription" onChange={handleControlledInputChange} defaultValue={itemId ? item.itemDescription : ""} />
             </Row>
             <p className="requiredField"><i>* Required</i></p>
             <Row style={{ marginTop: -15 }} className="justify-content-md-left">
                 <label style={{ width: 197, height: 5 }} className="ItemSerialTitle">Item Serial Number:  </label>
-                <input style={{ width: 400, height: 35 }} type="text" ref={itemSerialNumber} className="ItemSerialInput" name="itemSerialNumber" onChange={handleControlledInputChange} placeholder={itemId ? item.itemSerialNumber : ""} />
+                <input style={{ width: 400, height: 35 }} type="text" ref={itemSerialNumber} className="ItemSerialInput" name="itemSerialNumber" onChange={handleControlledInputChange} defaultValue={itemId ? item.itemSerialNumber : ""} />
             </Row>
             <p className="requiredField"><i>* Required</i></p>
             <Row style={{ marginTop: -15 }} className="justify-content-md-left">
                 <label style={{ width: 197, height: 5 }} className="ItemNotesTitle">Item Notes:  </label>
-                <textarea style={{ width: 400, height: 100 }} type="textarea" ref={itemNotes} className="ItemNotesInput" name="itemNotes" onChange={handleControlledInputChange} placeholder={itemId ? item.itemNotes : ""} />
+                <textarea style={{ width: 400, height: 100 }} type="textarea" ref={itemNotes} className="ItemNotesInput" name="itemNotes" onChange={handleControlledInputChange} defaultValue={itemId ? item.itemNotes : ""} />
             </Row>
 
             <Row style={{ marginTop: 20 }} className="justify-content-md-left">
