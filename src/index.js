@@ -5,6 +5,10 @@ import ApplicationViews from './ApplicationView';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
 
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 ReactDOM.render(
   <React.StrictMode>
     <Router>

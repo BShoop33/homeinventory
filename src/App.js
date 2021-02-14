@@ -7,6 +7,7 @@ import { RoomFilter } from "./RoomFilter"
 import './App.css';
 
 export function HomePage() {
+
   const { item, getItems, searchTerms, roomFilter } = useContext(ItemContext)
   const history = useHistory();
   const [filteredItems, setFiltered] = useState([])
@@ -20,7 +21,7 @@ export function HomePage() {
       const subset = item.filter(item => item.itemName.toLowerCase().includes(searchTerms.toLowerCase().trim()))
       setFiltered(subset)
     } else if (roomFilter !== "") {
-      const subset2 = item.filter(item => item.itemRoom.includes(roomFilter))
+      const subset2 = item.filter(item => item.itemLocation.includes(roomFilter))
       setFiltered(subset2)
     } else {
       setFiltered(item)
@@ -44,7 +45,7 @@ export function HomePage() {
         <div className="InventoryContainer">
           <div className="InventoryHeader">
             <div className="InventoryNameHeader">Item Name</div>
-            <div className="InventoryRoomHeader">Room</div>
+            <div className="InventoryRoomHeader">Location</div>
             <div className="InventoryDescriptionHeader">Description</div>
             <div className="InventorySerialHeader">Serial Number</div>
             <div className="InventoryNotesHeader">Notes</div>

@@ -4,12 +4,14 @@ import { HomePage } from "./App";
 import { AddItem } from "./AddItem";
 import { ItemProvider } from "./AppDataProvider"
 
+import { TestPage } from "./Test"
+
 export default function ApplicationViews() {
     return (
         <>
             <ItemProvider>
                 <Route exact path="/">
-                    <HomePage />
+                    <TestPage />
                 </Route>
             </ItemProvider>
 
