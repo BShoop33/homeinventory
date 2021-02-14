@@ -4,16 +4,16 @@ import { useHistory, useParams } from "react-router-dom"
 import './AddItem.css';
 
 export const AddItem = () => {
-    //assigns item variable the state of setNewItem
+    //assigns the state set by setNewItem to the item variable 
     const [item, setNewItem] = useState({})
 
-    //assigns history variable the useHistory hook
+    //assigns the useHistory hook to the history variable 
     const history = useHistory();
 
-    //assigns getItemById, addItems, editItems, and getItems variables the values returned by ItemContext
+    //assigns to the getItemById, addItems, editItems, and getItems variables the values returned by ItemContext 
     const { getItemById, addItems, editItems, getItems } = useContext(ItemContext)
 
-    //assigns itemId variable the route parameter
+    //assigns itemId variable the route parameter value
     const { itemId } = useParams()
 
     /*assigns addedItem variable the value of an item object. Then returns the value associated with each of the form's named inputs. 
@@ -38,12 +38,7 @@ export const AddItem = () => {
         }
     }, [getItemById, itemId])
 
-
-
-
-
     const constructItemObject = () => {
-        // setIsLoading(true)
         if (itemId) {
             editItems({
                 id: item.id,
@@ -78,7 +73,6 @@ export const AddItem = () => {
                     <div className="RoomInputContainer">
                         <label className="RoomInputTitle">Room</label>
                         <select className="RoomInput" name="itemRoom" onChange={handleControlledInputChange} >
-                            {/* <option defaultValue={itemId ? item.itemRoom : ""}></option> */}
                             <option selected>{itemId ? item.itemRoom : ""}</option>
                             <option>Attic</option>
                             <option>Back Yard</option>

@@ -1,10 +1,10 @@
 import React, { useContext, useEffect, useState } from "react"
-import './App.css';
 import { useHistory } from "react-router-dom"
 import { ItemCard } from "./ItemCard"
 import { ItemContext } from "./AppDataProvider"
 import { ItemSearch } from "./SearchTerms"
 import { RoomFilter } from "./RoomFilter"
+import './App.css';
 
 export function HomePage() {
   const { item, getItems, searchTerms, roomFilter } = useContext(ItemContext)

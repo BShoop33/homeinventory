@@ -3,8 +3,6 @@ import { Route } from "react-router-dom";
 import { HomePage } from "./App";
 import { AddItem } from "./AddItem";
 import { ItemProvider } from "./AppDataProvider"
-//import { EditItem } from "./EditItem"
-import { ItemCard } from "./ItemCard"
 
 export default function ApplicationViews() {
     return (
@@ -14,12 +12,6 @@ export default function ApplicationViews() {
                     <HomePage />
                 </Route>
             </ItemProvider>
-
-            {/* <ItemProvider>
-                <Route exact path="/">
-                    <ItemCard />
-                </Route>
-            </ItemProvider> */}
 
             <ItemProvider>
                 <Route exact path="/additem">
@@ -32,14 +24,6 @@ export default function ApplicationViews() {
                     <AddItem />
                 </Route>
             </ItemProvider>
-
-            {/* <ItemProvider>
-                <Route exact path="/edititem/:itemId(\d+)">
-                    <ItemCard />
-                </Route>
-            </ItemProvider> */}
-
-
         </>
     );
 }
