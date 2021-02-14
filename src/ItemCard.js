@@ -1,11 +1,7 @@
 import React, { useContext } from "react"
-import "./ItemCard.css"
-// import { DeleteButton } from "./DeleteItem"
 import { useHistory } from "react-router-dom"
 import { ItemContext } from "./AppDataProvider"
-import Col from "react-bootstrap/Col"
-import Row from "react-bootstrap/Row"
-import Button from "react-bootstrap/Button"
+import "./ItemCard.css"
 
 export const ItemCard = ({ item }) => {
     const { deleteItem } = useContext(ItemContext)

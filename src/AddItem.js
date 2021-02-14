@@ -10,22 +10,16 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 export const AddItem = () => {
-    //assigns item variable the state of setNewItem
+    //assigns the state set by setNewItem to the item variable 
     const [item, setNewItem] = useState({});
 
-    const itemName = useRef();
-    const itemDescription = useRef();
-    const itemSerialNumber = useRef();
-    const itemNotes = useRef();
-    const itemLocation = useRef();
-
-    //assigns history variable the useHistory hook
+    //assigns the useHistory hook to the history variable 
     const history = useHistory();
 
-    //assigns getItemById, addItems, editItems, and getItems variables the values returned by ItemContext
+    //assigns to the getItemById, addItems, editItems, and getItems variables the values returned by ItemContext 
     const { getItemById, addItems, editItems, getItems } = useContext(ItemContext)
 
-    //assigns itemId variable the route parameter
+    //assigns itemId variable the route parameter value
     const { itemId } = useParams()
 
     /*assigns addedItem variable the value of an item object. Then returns the value associated with each of the form's named inputs. 
@@ -50,168 +44,108 @@ Finally stores those returned inputs as a new item object*/
         }
     }, [getItemById, itemId])
 
-
-    const showToast1 = () => {
-        toast.error("Item Location is a required field")
-    };
-
-    const showToast2 = () => {
-        toast.error("Item Name is a required field")
-    };
-
-    const showToast3 = () => {
-        toast.error("Item Description is a required field")
-    };
-
-    const showToast4 = () => {
-        toast.error("Item Serial Number is a required field")
-    };
-
-    const showToast5 = () => {
-        toast.error("Item Notes is a required field")
-    };
-
-
     const constructItemObject = () => {
-        // setIsLoading(true)
-        if (itemLocation.current.value === "") {
-            showToast1();
-        }
-        else if (itemName.current.value === "") {
-            showToast2();
-        }
-        else if (itemDescription.current.value === "") {
-            showToast3();
-        }
-        else if (itemSerialNumber.current.value === "") {
-            showToast4();
-        }
-        else if (itemNotes.current.value === "") {
-            showToast5();
-        }
-        else {
-            if (itemId) {
-                editItems({
-                    id: item.id,
-                    itemName: item.itemName,
-                    itemLocation: itemLocation.current.value,
-                    itemDescription: item.itemDescription,
-                    itemSerialNumber: item.itemSerialNumber,
-                    itemNotes: item.itemNotes
-                })
-                    .then(() => history.push("/"))
-            } else {
-                addItems({
-                    id: item.id,
-                    itemName: item.itemName,
-                    itemLocation: item.itemRoom,
-                    itemDescription: item.itemDescription,
-                    itemSerialNumber: item.itemSerialNumber,
-                    itemNotes: item.itemNotes
-                })
-                    .then(() => history.push("/"))
-            }
+        if (itemId) {
+            editItems({
+                id: item.id,
+                itemName: item.itemName,
+                itemRoom: item.itemRoom,
+                itemDescription: item.itemDescription,
+                itemSerialNumber: item.itemSerialNumber,
+                itemNotes: item.itemNotes
+            })
+                .then(() => history.push("/"))
+        } else {
+            addItems({
+                id: item.id,
+                itemName: item.itemName,
+                itemRoom: item.itemRoom,
+                itemDescription: item.itemDescription,
+                itemSerialNumber: item.itemSerialNumber,
+                itemNotes: item.itemNotes
+            })
+                .then(() => history.push("/"))
         }
     }
 
     return (
         <>
-            <h1 className="AddItemHeader">Inventory</h1>
-            <hr className="hr-AddItem" />
-            <p className="requiredField"><i>* Required</i></p>
-            <Row style={{ marginTop: -15 }} className="justify-content-md-left">
-                <label style={{ width: 200, height: 5 }} className="LocationTitle">Item Location</label>
-                <select style={{ width: 400, height: 35 }}
-                    className="RoomInput"
-                    name="itemRoom"
-                    onChange={handleControlledInputChange}
-                    ref={itemLocation}
-                >
-                    <option defaultValue>{itemId ? item.itemLocation : ""}</option>
-                    <option>AmSurg PAR 1</option>
-                    <option>AmSurg PAR 2</option>
-                    <option>AmSurg PAR 3</option>
-                    <option>Emergency Room PAR 1</option>
-                    <option>Emergency Room PAR 2</option>
-                    <option>ICU PAR 1</option>
-                    <option>ICU PAR 2</option>
-                    <option>Gastroenterology PAR 1</option>
-                    <option>Hematology PAR 1</option>
-                    <option>Hematology PAR 2</option>
-                    <option>Materials Management</option>
-                    <option>Neurology PAR 1</option>
-                    <option>Pharmacy</option>
-                    <option>Store Room 1</option>
-                    <option>Store Room 2</option>
-                </select>
-            </Row>
-            <p className="requiredField"><i>* Required</i></p>
-            <Row style={{ marginTop: -15 }} className="justify-content-md-left">
-                <form action="/action_page.php">
-                    <label style={{ width: 200, height: 5 }} className="ItemNameTitle">Item Name:  </label>
-                    <input style={{ width: 400, height: 35 }} type="text" ref={itemName} className="ItemNameInput" name="itemName" onChange={handleControlledInputChange} defaultValue={itemId ? item.itemName : ""} />
-                </form>
-            </Row>
-            <p className="requiredField"><i>* Required</i></p>
-            <Row style={{ marginTop: -15 }} className="justify-content-md-left">
-                <label style={{ width: 200, height: 5 }} className="DescriptionTitle">Item Description:  </label>
-                <textarea style={{ width: 400, height: 100 }} type="textarea" ref={itemDescription} className="DescriptionInput" name="itemDescription" onChange={handleControlledInputChange} defaultValue={itemId ? item.itemDescription : ""} />
-            </Row>
-            <p className="requiredField"><i>* Required</i></p>
-            <Row style={{ marginTop: -15 }} className="justify-content-md-left">
-                <label style={{ width: 197, height: 5 }} className="ItemSerialTitle">Item Serial Number:  </label>
-                <input style={{ width: 400, height: 35 }} type="text" ref={itemSerialNumber} className="ItemSerialInput" name="itemSerialNumber" onChange={handleControlledInputChange} defaultValue={itemId ? item.itemSerialNumber : ""} />
-            </Row>
-            <p className="requiredField"><i>* Required</i></p>
-            <Row style={{ marginTop: -15 }} className="justify-content-md-left">
-                <label style={{ width: 197, height: 5 }} className="ItemNotesTitle">Item Notes:  </label>
-                <textarea style={{ width: 400, height: 100 }} type="textarea" ref={itemNotes} className="ItemNotesInput" name="itemNotes" onChange={handleControlledInputChange} defaultValue={itemId ? item.itemNotes : ""} />
-            </Row>
+            <header className="PageHeaderContainer-AddItem">
+                <h1 className="HomeInventoryTitle-AddItem">Home Inventory</h1>
+            </header>
 
-            <Row style={{ marginTop: 20 }} className="justify-content-md-left">
-                <Button
-                    style={{ width: 150, marginLeft: 30 }}
-                    variant="success"
-                    onClick={item => {
-                        item.preventDefault()
-                        constructItemObject()
-                        // history.push(`/`)
-                    }}
-                    type="button">Save Item
-                </Button>
+            <div className="BodyContainer">
+                <div className="InputsContainer">
+                    <div className="RoomInputContainer">
+                        <label className="RoomInputTitle">Room</label>
+                        <select className="RoomInput" name="itemRoom" onChange={handleControlledInputChange} >
+                            <option selected>{itemId ? item.itemRoom : ""}</option>
+                            <option>Attic</option>
+                            <option>Back Yard</option>
+                            <option>Bed Room 1</option>
+                            <option>Bed Room 1 Closet</option>
+                            <option>Bed Room 2</option>
+                            <option>Bed Room 2 Closet</option>
+                            <option>Bed Room 3</option>
+                            <option>Bed Room 3 Closet</option>
+                            <option>Bonus Room</option>
+                            <option>Dining Room</option>
+                            <option>Downstairs Bathroom</option>
+                            <option>Downstairs Closet</option>
+                            <option>Foyer</option>
+                            <option>Front Porch</option>
+                            <option>Front Yard</option>
+                            <option>Garage</option>
+                            <option>Guest Bathroom</option>
+                            <option>Kitchen</option>
+                            <option>Laundry Room</option>
+                            <option>Living Room</option>
+                            <option>Main Bathroom</option>
+                            <option>Mud Room</option>
+                            <option>Patio</option>
+                            <option>Stairwell</option>
+                        </select>
+                    </div>
 
-                <Button
-                    style={{ width: 150, marginLeft: 30 }}
-                    variant="danger"
-                    className="CancelAddItem"
-                    onClick={() => {
-                        history.push(`/`)
-                    }}
-                    type="submit">Cancel
-                </Button>
+                    <form action="/action_page.php">
+                        <label className="ItemNameTitle">Item Name:  </label>
+                        <input type="text" className="ItemNameInput" name="itemName" onChange={handleControlledInputChange} placeholder={itemId ? item.itemName : ""} />
+                    </form>
 
-                {/* <Button
-                    style={{ width: 150, marginLeft: 30 }}
-                    variant="danger"
-                    className="CancelAddItem"
-                    onClick={showToast}
-                    type="submit">Toast
-                </Button>
-                 */}
-                <ToastContainer
-                    position="top-center"
-                    autoClose={2000}
-                    hideProgressBar={false}
-                    newestOnTop={false}
-                    closeOnClick
-                    rtl={false}
-                    pauseOnFocusLoss
-                    draggable
-                    pauseOnHover
+                    <label className="DescriptionTitle">Item Description:  </label>
+                    <div className="DescriptionContainer">
+                        <textarea type="textarea" className="DescriptionInput" name="itemDescription" onChange={handleControlledInputChange} placeholder={itemId ? item.itemDescription : ""} />
+                    </div>
 
-                />
+                    <div className="ItemSerialContainer">
+                        <label className="ItemSerialTitle">Item Serial Number:  </label>
+                        <input type="text" className="ItemSerialInput" name="itemSerialNumber" onChange={handleControlledInputChange} placeholder={itemId ? item.itemSerialNumber : ""} />
+                    </div>
 
-            </Row>
+                    <label className="ItemNotesTitle">Item Notes:  </label>
+                    <div className="ItemNotesContainer">
+                        <textarea type="textarea" className="ItemNotesInput" name="itemNotes" onChange={handleControlledInputChange} placeholder={itemId ? item.itemNotes : ""} />
+                    </div>
+                </div>
+
+                <div className="AddItemButtonsContainer">
+                    <button className="SaveAddItem"
+                        onClick={item => {
+                            item.preventDefault()
+                            constructItemObject()
+                            history.push(`/`)
+                        }}
+                        type="button">Save Item
+                    </button>
+
+                    <button className="CancelAddItem"
+                        onClick={() => {
+                            history.push(`/`)
+                        }}
+                        type="submit">Cancel
+                    </button>
+                </div>
+            </div>
         </>
     );
 }

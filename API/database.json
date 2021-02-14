@@ -1,36 +1,3 @@
 {
-  "Items": [
-    {
-      "itemName": "asdfas",
-      "itemLocation": "AmSurg PAR 2",
-      "itemDescription": "asdfa",
-      "itemSerialNumber": "asdas",
-      "itemNotes": "adsfad",
-      "id": 1
-    },
-    {
-      "itemName": "aaaaaaaaaa",
-      "itemLocation": "AmSurg PAR 2",
-      "itemDescription": "aaaaaa",
-      "itemSerialNumber": "aaaaaa",
-      "itemNotes": "aaaaaaaa",
-      "id": 2
-    },
-    {
-      "id": 3,
-      "itemName": "bbbbbbb",
-      "itemLocation": "Emergency Room PAR 1",
-      "itemDescription": "bbbbbb",
-      "itemSerialNumber": "bbbbbbb",
-      "itemNotes": "bbbbbb"
-    },
-    {
-      "id": 4,
-      "itemName": "aaaaa",
-      "itemLocation": "Hematology PAR 1",
-      "itemDescription": "sdfgsdfg",
-      "itemSerialNumber": "aa",
-      "itemNotes": "aa"
-    }
-  ]
+  "Items": []
 }
